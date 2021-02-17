@@ -1,0 +1,123 @@
+body {
+  background-color: gray;
+  height: 100vh;
+  margin: 20px 40px;
+  position: relative;
+}
+
+.grid-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.grid {
+  border: 1px solid white;
+  height: 200px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.bubble-wrapper {
+  position: absolute;
+  top: 70%;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 30px;
+  left: 10%;
+}
+
+.bubble {
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 100px;
+}
+
+footer {
+  border-top: 1px solid white;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  width: 100%;
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toolbar * {
+  margin: 0 10px;
+}
+
+.user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+  height: 60px;
+  border-radius: 60px;
+  width: 60px;
+}
+
+.button-prompts {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  transform: translateX(-5%);
+  align-items: center;
+}
+
+.button-prompts * {
+  margin: 0 50px;
+}
+
+.options {
+  position: relative;
+  height: 30px;
+  border: 1px solid white;
+  width: 30px;
+  border-radius: 30px;
+}
+.options::before {
+  content: attr(data-button);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.options::after {
+  content: attr(data-action);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%);
+}
+
+.start::after {
+  left: 90%;
+}
+
+footer {
+  display: flex;
+}
+
+.gamepad {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 20%;
+  font-size: 50px;
+}
