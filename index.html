@@ -19,40 +19,48 @@
     <title>Switch Menu</title>
   </head>
   <body>
-    <header>
-      <div class="user"></div>
-      <div class="toolbar">
-        <span id="clock"></span>
-        <i class="fas fa-wifi"></i>
-        <i class="fas fa-battery-three-quarters"></i>
-      </div>
-    </header>
+    <div class="console-wrapper">
+      <div class="screen-border">
+        <div class="screen-wrapper">
+          <div class="screen-header">
+            <div class="user"></div>
+            <div class="toolbar">
+              <span id="clock"></span>
+              <i class="fas fa-wifi"></i>
+              <i class="fas fa-battery-three-quarters"></i>
+            </div>
+          </div>
 
-    <div class="grid-wrapper">
-      <div class="grid"></div>
-      <div class="grid"></div>
-      <div class="grid"></div>
-      <div class="grid"></div>
+          <div class="grid-wrapper">
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+            <div class="grid"></div>
+          </div>
+
+          <div class="bubble-wrapper">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+          </div>
+
+          <div class="screen-footer">
+            <div class="gamepad">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="button-prompts">
+              <div class="options" data-button="+" data-action="Options"></div>
+              <div class="options start" data-button="A" data-action="Start"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="bubble-wrapper">
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-    </div>
-
-    <footer>
-      <div class="gamepad">
-        <i class="fas fa-gamepad"></i>
-      </div>
-      <div class="button-prompts">
-        <div class="options" data-button="+" data-action="Options"></div>
-        <div class="options start" data-button="A" data-action="Start"></div>
-      </div>
-    </footer>
     <script src="script.js"></script>
   </body>
 </html>

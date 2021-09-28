@@ -1,49 +1,69 @@
 body {
   background-color: gray;
-  height: 80vh;
-  margin: 20px 40px;
-  position: relative;
-  border: 1px solid white;
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: #333;
 }
 
-footer {
+.console-wrapper {
+  width: fit-content;
+  padding: 5px 10px;
+  margin: auto;
+  background: #2f2f32;
+}
+
+.screen-border {
+  width: fit-content;
+  padding: 20px 30px;
+  background: #000;
+  border-radius: 20px;
+}
+
+.screen-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid white;
-  position: absolute;
-  bottom: 0;
+  border-top: 1px solid #333;
   height: 50px;
-  width: 96%;
+  width: 100%;
   padding: 15px 0;
-  transform: translateX(2%);
 }
 
-header {
+.screen-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 50px 50px;
+  padding: 1rem 0.5rem;
+  margin-bottom: 50px;
   letter-spacing: 2px;
 }
 
-.grid-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
+.screen-wrapper {
+  padding: 1rem 1.5rem;
+  border: 1px solid #333;
   width: 100%;
-  height: 200px;
-  gap: 20px;
+  max-width: 60rem;
+  background: #eceaeb;
+  margin: auto;
+}
+
+.grid-wrapper {
+  display: grid;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  width: calc(100% - 1.5rem);
+  height: 202px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  column-gap: 10px;
+  grid-auto-flow: column;
+  overflow-y: scroll;
 }
 
 .grid {
-  border: 1px solid white;
-  height: 200px;
-  width: 200px;
+  border: 5px solid #fdfffe;
+  height: 190px;
+  width: 190px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background: #eeeeee;
 }
 
 .bubble-wrapper {
@@ -56,10 +76,15 @@ header {
 }
 
 .bubble {
-  border: 1px solid white;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   height: 65px;
   width: 65px;
+  background: #fdfffd;
+}
+
+.bubble:hover {
+  outline: 4px solid #b4ebed;
 }
 
 .toolbar {
@@ -74,7 +99,7 @@ header {
   display: flex;
   justify-content: flex-start;
   width: 80%;
-  border: 1px solid white;
+  border: 1px solid #333;
   height: 60px;
   border-radius: 60px;
   width: 60px;
@@ -95,7 +120,7 @@ header {
 .options {
   position: relative;
   height: 30px;
-  border: 1px solid white;
+  border: 1px solid #333;
   width: 30px;
   border-radius: 30px;
   font-size: 25px;
