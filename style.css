@@ -86,6 +86,17 @@ body {
   background: #eeeeee;
 }
 
+.grid:hover {
+  border: 5px solid #b4ebed;
+}
+
+.grid .game {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .bubble-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,12 +116,34 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   height: 65px;
   width: 65px;
-  background: #6A6367;
+  background: #6a6367;
+}
+
+.bubble:hover {
+  outline: 4px solid #b4ebed;
+}
+
+.bubble:hover .bubble-title {
+  display: block;
+}
+
+.bubble-title {
+  display: none;
+  position: absolute;
+  width: 130px;
+  bottom: -25px;
+  left: -50%;
+  white-space: nowrap;
+  text-align: center;
+  color: #0885a5;
+  text-shadow: 1px 1px 2px #0885a554;
+  font-size: 18px;
 }
 
 .bubble .icon {
@@ -118,10 +151,6 @@ body {
   margin: auto;
   font-size: 32px;
   color: white;
-}
-
-.bubble:hover {
-  outline: 4px solid #b4ebed;
 }
 
 .toolbar {
@@ -141,7 +170,7 @@ body {
           justify-content: flex-start;
   width: 80%;
   border: 4px solid #333;
-  background-color: #0885A5;
+  background-color: #0885a5;
   height: 60px;
   border-radius: 60px;
   width: 60px;

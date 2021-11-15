@@ -10,7 +10,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/31937ebb0b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/31937ebb0b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Switch Menu</title>
   </head>
   <body>
@@ -29,7 +32,9 @@
           </div>
 
           <div class="grid-wrapper">
-            <div class="grid"></div>
+            <div class="grid">
+              <img class="game" src="./chronotrigger.jpeg" />
+            </div>
             <div class="grid"></div>
             <div class="grid"></div>
             <div class="grid"></div>
@@ -38,12 +43,30 @@
           </div>
 
           <div class="bubble-wrapper">
-            <div class="bubble"><i class="icon far fa-newspaper"></i></div>
-            <div class="bubble"><i class="icon fas fa-shopping-bag"></i></div>
-            <div class="bubble"><i class="icon far fa-image"></i></div>
-            <div class="bubble"><i class="icon fas fa-mobile-alt"></i></div>
-            <div class="bubble"><i class="icon fas fa-cog"></i></div>
-            <div class="bubble"><i class="icon fas fa-power-off"></i></div>
+            <div class="bubble" data-option="News">
+              <i class="icon far fa-newspaper"></i>
+              <div class="bubble-title"><span>News</span></div>
+            </div>
+            <div class="bubble" data-option="Nintendo eShop">
+              <i class="icon fas fa-shopping-bag"></i>
+              <div class="bubble-title"><span>Nintendo eShop</span></div>
+            </div>
+            <div class="bubble" data-option="Album">
+              <i class="icon far fa-image"></i>
+              <div class="bubble-title"><span>Album</span></div>
+            </div>
+            <div class="bubble" data-option="Controllers">
+              <i class="icon fas fa-mobile-alt"></i>
+              <div class="bubble-title"><span>Controllers</span></div>
+            </div>
+            <div class="bubble" data-option="System Settings">
+              <i class="icon fas fa-cog"></i>
+              <div class="bubble-title"><span>System Settings</span></div>
+            </div>
+            <div class="bubble" data-option="Power Off">
+              <i class="icon fas fa-power-off"></i>
+              <div class="bubble-title"><span>Power Off</span></div>
+            </div>
           </div>
 
           <div class="screen-footer">
@@ -52,7 +75,11 @@
             </div>
             <div class="button-prompts">
               <div class="options" data-button="+" data-action="Options"></div>
-              <div class="options start" data-button="A" data-action="Start"></div>
+              <div
+                class="options start"
+                data-button="A"
+                data-action="Start"
+              ></div>
             </div>
           </div>
         </div>
