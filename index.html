@@ -17,73 +17,77 @@
     <title>Switch Menu</title>
   </head>
   <body>
-    <div class="console-wrapper">
-      <div class="screen-border">
-        <div class="screen-wrapper">
-          <div class="screen-header">
-            <div class="user-icon">
-              <img src="./cuphead-logo.png" />
+    <div id="main" class="main">
+      <div class="left-controller controller"></div>
+      <div class="console-wrapper">
+        <div class="screen-border">
+          <div class="screen-wrapper">
+            <div class="screen-header">
+              <div class="user-icon">
+                <img src="./cuphead-logo.png" />
+              </div>
+              <div class="toolbar">
+                <span id="clock"></span>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-three-quarters"></i>
+              </div>
             </div>
-            <div class="toolbar">
-              <span id="clock"></span>
-              <i class="fas fa-wifi"></i>
-              <i class="fas fa-battery-three-quarters"></i>
-            </div>
-          </div>
 
-          <div class="grid-wrapper">
-            <div class="grid">
-              <img class="game" src="./chronotrigger.jpeg" />
+            <div class="grid-wrapper">
+              <div class="grid">
+                <img class="game" src="./chronotrigger.jpeg" />
+              </div>
+              <div class="grid"><div class="game-placeholder"></div></div>
+              <div class="grid"><div class="game-placeholder"></div></div>
+              <div class="grid"><div class="game-placeholder"></div></div>
+              <div class="grid"><div class="game-placeholder"></div></div>
+              <div class="grid"><div class="game-placeholder"></div></div>
             </div>
-            <div class="grid"><div class="game-placeholder"></div></div>
-            <div class="grid"><div class="game-placeholder"></div></div>
-            <div class="grid"><div class="game-placeholder"></div></div>
-            <div class="grid"><div class="game-placeholder"></div></div>
-            <div class="grid"><div class="game-placeholder"></div></div>
-          </div>
 
-          <div class="bubble-wrapper">
-            <div class="bubble" data-option="News">
-              <i class="icon far fa-newspaper"></i>
-              <div class="bubble-title"><span>News</span></div>
+            <div class="bubble-wrapper">
+              <div class="bubble" data-option="News">
+                <i class="icon far fa-newspaper"></i>
+                <div class="bubble-title"><span>News</span></div>
+              </div>
+              <div class="bubble" data-option="Nintendo eShop">
+                <i class="icon fas fa-shopping-bag"></i>
+                <div class="bubble-title"><span>Nintendo eShop</span></div>
+              </div>
+              <div class="bubble" data-option="Album">
+                <i class="icon far fa-image"></i>
+                <div class="bubble-title"><span>Album</span></div>
+              </div>
+              <div class="bubble" data-option="Controllers">
+                <i class="icon fas fa-mobile-alt"></i>
+                <div class="bubble-title"><span>Controllers</span></div>
+              </div>
+              <div class="bubble" data-option="System Settings">
+                <i class="icon fas fa-cog"></i>
+                <div class="bubble-title"><span>System Settings</span></div>
+              </div>
+              <div class="bubble" data-option="Power Off">
+                <i class="icon fas fa-power-off"></i>
+                <div class="bubble-title"><span>Power Off</span></div>
+              </div>
             </div>
-            <div class="bubble" data-option="Nintendo eShop">
-              <i class="icon fas fa-shopping-bag"></i>
-              <div class="bubble-title"><span>Nintendo eShop</span></div>
-            </div>
-            <div class="bubble" data-option="Album">
-              <i class="icon far fa-image"></i>
-              <div class="bubble-title"><span>Album</span></div>
-            </div>
-            <div class="bubble" data-option="Controllers">
-              <i class="icon fas fa-mobile-alt"></i>
-              <div class="bubble-title"><span>Controllers</span></div>
-            </div>
-            <div class="bubble" data-option="System Settings">
-              <i class="icon fas fa-cog"></i>
-              <div class="bubble-title"><span>System Settings</span></div>
-            </div>
-            <div class="bubble" data-option="Power Off">
-              <i class="icon fas fa-power-off"></i>
-              <div class="bubble-title"><span>Power Off</span></div>
-            </div>
-          </div>
 
-          <div class="screen-footer">
-            <div class="gamepad">
-              <i class="fas fa-gamepad"></i>
-            </div>
-            <div class="button-prompts">
-              <div class="options" data-button="+" data-action="Options"></div>
-              <div
-                class="options start"
-                data-button="A"
-                data-action="Start"
-              ></div>
+            <div class="screen-footer">
+              <div class="gamepad">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <div class="button-prompts">
+                <div class="options" data-button="+" data-action="Options"></div>
+                <div
+                  class="options start"
+                  data-button="A"
+                  data-action="Start"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="right-controller controller"></div>
     </div>
     <script src="script.js"></script>
   </body>

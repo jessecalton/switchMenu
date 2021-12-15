@@ -12,3 +12,31 @@ function time() {
 }
 
 setInterval(time, 1000);
+
+// Resize console based on window size
+
+let main = document.getElementById('main');
+let baseSize = {
+    w: 1571,
+    h: 724    
+}
+
+function updateScale() {
+    
+    let windowHeight = window.innerHeight;
+    let windowWidth = window.innerWidth;
+    let newScale = 1;
+    
+    if(windowWidth/windowHeight < baseSize.w/baseSize.h) {
+        newScale = windowWidth / baseSize.w;
+    } else {
+        newScale = windowHeight / baseSize.h;        
+    }
+    
+    main.style.transform = 'scale(' + newScale + ',' +  newScale + ')';
+    
+    console.log(newScale);
+}
+
+window.addEventListener('resize', updateScale);
+window.addEventListener('load', updateScale);

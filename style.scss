@@ -9,16 +9,21 @@ body {
   color: #333;
 }
 
-.console-wrapper {
+.main {
+  display: flex;
   width: fit-content;
-  padding: 5px 10px;
   margin: auto;
+  transform-origin: left;
+}
+
+.console-wrapper {
+  padding: 15px 20px;
   background: #2f2f32;
 }
 
 .screen-border {
   width: fit-content;
-  padding: 20px 30px;
+  padding: 20px 40px;
   background: #000;
   border-radius: 20px;
 }
@@ -236,6 +241,20 @@ body {
   width: 20%;
   font-size: 50px;
   padding-left: 20px;
+}
+
+.controller {
+  width: 200px;
+}
+
+.left-controller {
+  background-color: #d5f35a;
+  border-radius: 150px 0 0 150px;
+}
+
+.right-controller {
+  background-color: #aa2eb2;
+  border-radius: 0 150px 150px 0;
 }
 
 @media (max-height: 738px) {
