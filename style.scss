@@ -244,17 +244,100 @@ body {
 }
 
 .controller {
-  width: 200px;
+  position: relative;
+  width: 150px;
 }
 
 .left-controller {
   background-color: #d5f35a;
-  border-radius: 150px 0 0 150px;
+  border-radius: 125px 0 0 125px;
+
+  .analog-buttons {
+    left: 9%;
+    top: 50%;
+  }
 }
 
 .right-controller {
   background-color: #aa2eb2;
-  border-radius: 0 150px 150px 0;
+  border-radius: 0 125px 125px 0;
+
+  .analog-buttons {
+    right: 9%;
+    top: 20%;
+  }
+}
+
+$analog-button-pad-width: 125px;
+$analog-button-width: calc(#{$analog-button-pad-width} / 3);
+$analog-button-margin: calc(#{$analog-button-pad-width} / 20);
+$btn-alpha-font-size: calc(#{$analog-button-pad-width} / 4.5);
+
+.analog-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: $analog-button-pad-width;
+
+  .top-row, .bottom-row {
+    margin: 0 auto;
+  }
+
+  .middle-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+}
+
+.analog-button {
+  position: relative;
+  background-color: #000;
+  width: $analog-button-width;
+  height: $analog-button-width;
+  border-radius: 50%;
+  box-shadow: 0px 4px 0px #000;
+  
+  &::after {
+    content: attr(data-analog-button);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:active {
+    box-shadow: 0px 2px 0px #000;
+    top: 2px;
+  }
+}
+
+.btn-alpha {
+  &::after {
+    top: 53%;
+    font-size: $btn-alpha-font-size;
+    color: $slate-grey;
+  }
+}
+
+.directional-arrow {
+  &::after {
+    font-size: $btn-alpha-font-size;
+    color: #333;
+  }
+
+  // hacky solution to align the left and right arrow button icons
+  .middle-row &:first-child {
+      &::after {
+        transform: translate(-60%, -50%);
+      }
+  }
+
+  .middle-row &:last-child {
+    &::after {
+      transform: translate(-40%, -45%);
+    }
+}
 }
 
 @media (max-height: 738px) {
