@@ -43,97 +43,50 @@ window.addEventListener('load', updateScale);
 
 // Joystick animation
 
-var pro = document.getElementById('control-stick-wrapper');
-var cer = document.getElementById('control-stick');
-var proR = pro.getBoundingClientRect();
-var cirR = cer.getBoundingClientRect();
-// radii
-var rW = (cirR.right - cirR.left) / 2;
-var rH = (cirR.bottom - cirR.top) / 2;
-// page coords of center
-var oX = (proR.right - proR.left) / 2;
-var oY = (proR.bottom - proR.top) / 2;
-var x, y;
-// max movement
-var max = 25;
+let ctrlStickWrappers = document.getElementsByClassName('control-stick-wrapper');
+let ctrlSticks = document.getElementsByClassName('control-stick');
+let leftCtrlStick = document.getElementById('left-control-stick');
+let rightCtrlStick = document.getElementById('right-control-stick');
 
-function setPos(x, y) {
-  cer.style.left = (x + oX - rW) + "px";
-  cer.style.top = (y + oY - rH) + "px";
+let ctrlStickWrapperRect = ctrlStickWrappers[0].getBoundingClientRect();
+let ctrlStickRect = ctrlStickWrappers[0].querySelector('.control-stick').getBoundingClientRect();
+
+// radii
+let radiusWidth = ctrlStickRect.width / 2;
+let radiusHeight = ctrlStickRect.height / 2;
+// page coords of center
+let centerX = ctrlStickWrapperRect.width / 2;
+let centerY = ctrlStickWrapperRect.height / 2;
+let x, y;
+// max movement
+let max = 25;
+
+for (let csw of ctrlStickWrappers) {
+  csw.addEventListener("mouseleave", function(e) {
+    setPos(e.target.querySelector('.control-stick'), 0, 0);
+  });
+  
+  csw.addEventListener("mousemove", function(e) {
+    x = e.offsetX - centerX;
+    y = e.offsetY - centerY;
+    // limit to max
+    if (x < -max) x = -max;
+    if (x > max) x = max;
+    if (y < -max) y = -max;
+    if (y > max) y = max;
+    // set circle position
+    // console.log(e.target.querySelector('.control-stick').getBoundingClientRect().x);
+    setPos(e.target.querySelector('.control-stick'), x, y);
+  });
+
 }
 
-pro.addEventListener("mouseleave", function() {
-  setPos(0, 0);
-});
-
-pro.addEventListener("mousemove", function(e) {
-  // other numbers are the absolute positioning values
-  x = e.clientX - oX + 13.5;
-  y = e.clientY - oY - 105;
-  // limit to max
-  console.log(y);
-  if (x < -max) x = -max;
-  if (x > max) x = max;
-  if (y < -max) y = -max;
-  if (y > max) y = max;
-  // set circle position
-  setPos(x, y);
-});
-
-setPos(0, 0);
+function setPos(elem, x, y) {
+  elem.style.left = (x + centerX - radiusWidth) + "px";
+  elem.style.top = (y + centerY - radiusHeight) + "px";
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// var pro = document.getElementById('control-stick-wrapper');
-// var cer = document.getElementById('control-stick');
-// var proR = pro.getBoundingClientRect();
-// var cirR = cer.getBoundingClientRect();
-// // radii
-// var rW = (cirR.right - cirR.left) / 2;
-// var rH = (cirR.bottom - cirR.top) / 2;
-// // page coords of center
-// var oX = (proR.right + proR.left) / 2;
-// var oY = (proR.bottom + proR.top) / 2;
-// var x, y;
-// // max movement
-// var max = 15;
-
-// console.log(proR);
-// console.log(cirR);
-// console.log(object);
-
-// function setPos(x, y) {
-//   cer.style.left = (x + oX - rW) + "px";
-//   cer.style.top = (y + oY - rH) + "px";
-// }
-
-// pro.addEventListener("mouseleave", function() {
-//   setPos(0, 0);
-//   console.log('left');
-// });
-
-// pro.addEventListener("mousemove", function(e) {
-//   // 0,0 is at center
-//   x = e.clientX - oX;
-//   y = e.clientY - oY;
-//   // limit to max
-//   if (x < -max) x = -max;
-//   if (x > max) x = max;
-//   if (y < -max) y = -max;
-//   if (y > max) y = max;
-//   // set circle position
-//   setPos(x, y);
-// });
-
-// setPos(0, 0);
+setPos(leftCtrlStick, 0, 0);
+setPos(rightCtrlStick, 0, 0);

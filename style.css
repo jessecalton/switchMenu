@@ -394,11 +394,18 @@ body {
   position: absolute;
   display: inline-block;
   left: -9%;
-  top: 15%;
   padding: 40px;
   opacity: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.left-controller .control-stick-wrapper {
+  top: 15%;
+}
+
+.right-controller .control-stick-wrapper {
+  top: 44.5%;
 }
 
 .control-stick-base {

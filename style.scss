@@ -345,10 +345,17 @@ $btn-alpha-font-size: calc(#{$analog-button-pad-width} / 4.5);
   position: absolute;
   display: inline-block;
   left: -9%;
-  top: 15%;
   padding: 40px;
   opacity: 1;
   box-sizing: border-box;
+  
+  .left-controller & {
+    top: 15%;
+  }
+
+  .right-controller & {
+    top: 44.5%;
+  }
 }
 
 .control-stick-base {
