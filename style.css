@@ -56,7 +56,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   letter-spacing: 2px;
 }
 
@@ -75,7 +75,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 1rem;
   margin-left: 2rem;
@@ -90,6 +90,7 @@ body {
 }
 
 .grid {
+  position: relative;
   height: 200px;
   width: 200px;
   border: 3px solid #fffdfc;
@@ -99,6 +100,28 @@ body {
 
 .grid:hover {
   outline: 5px solid #3db4ad;
+}
+
+.grid:hover .game-name {
+  display: block;
+}
+
+.grid .game-name {
+  content: attr(data-game-name);
+  position: absolute;
+  display: none;
+  top: -36px;
+  right: 25%;
+  height: 30px;
+  min-width: 100%;
+  max-width: 320px;
+  white-space: nowrap;
+  text-align: center;
+  color: #0885a5;
+  text-shadow: 1px 1px 2px #0885a554;
+  font-size: 1.25rem;
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
 }
 
 .grid .game-placeholder {
