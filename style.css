@@ -98,11 +98,11 @@ body {
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.05);
 }
 
-.grid:hover {
+.grid.is-highlighted {
   outline: 5px solid #3db4ad;
 }
 
-.grid:hover .game-name {
+.grid.is-highlighted .game-name {
   display: block;
 }
 
@@ -165,11 +165,11 @@ body {
   background: #fffdfc;
 }
 
-.bubble:hover {
+.bubble.is-highlighted {
   outline: 4px solid #3db4ad;
 }
 
-.bubble:hover .bubble-title {
+.bubble.is-highlighted .bubble-title {
   display: block;
 }
 
@@ -216,7 +216,7 @@ body {
   overflow: hidden;
 }
 
-.user-icon:hover {
+.user-icon.is-highlighted {
   border-color: #3db4ad;
 }
 

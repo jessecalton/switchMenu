@@ -34,8 +34,6 @@ function updateScale() {
     }
     
     main.style.transform = 'scale(' + newScale + ',' +  newScale + ')';
-    
-    console.log(newScale);
 }
 
 window.addEventListener('resize', updateScale);
@@ -75,7 +73,6 @@ for (let csw of ctrlStickWrappers) {
     if (y < -max) y = -max;
     if (y > max) y = max;
     // set circle position
-    // console.log(e.target.querySelector('.control-stick').getBoundingClientRect().x);
     setPos(e.target.querySelector('.control-stick'), x, y);
   });
 
@@ -86,7 +83,100 @@ function setPos(elem, x, y) {
   elem.style.top = (y + centerY - radiusHeight) + "px";
 }
 
-
-
 setPos(leftCtrlStick, 0, 0);
 setPos(rightCtrlStick, 0, 0);
+
+// Menu option selector
+
+let clickableElements = document.getElementsByClassName('is-clickable');
+
+function highlightMenuOption(elem) {
+  // Clear all other highlighted options
+  for (let clickableElem of clickableElements) {
+    clickableElem.classList.remove('is-highlighted');
+  }
+
+  // Highlight selected element
+  elem.classList.add('is-highlighted');
+}
+
+for (let clickableElem of clickableElements) {
+  clickableElem.addEventListener('mouseover', (e) => {
+    highlightMenuOption(clickableElem);
+  })
+}
+
+// Build the 2D array of clickable elements
+
+let innerGridInd = 0;
+let clickableGrid = [[]];
+
+for (let val of clickableElements) {
+  let gridInd = clickableGrid.length - 1
+
+  if (clickableGrid[gridInd].length === 0 || clickableGrid[gridInd][innerGridInd - 1].className === val.className) {
+    clickableGrid[gridInd].push(val);
+    } else {
+      innerGridInd = 0;
+      clickableGrid.push([]);
+      clickableGrid[clickableGrid.length - 1].push(val);
+    }
+  innerGridInd++;
+}
+
+window.addEventListener('keydown', e => {
+  
+  switch (e.key) {
+    case "ArrowLeft":
+        // Left pressed
+        moveCursorHorizontal(-1);
+        break;
+    case "ArrowRight":
+        // Right pressed
+        moveCursorHorizontal(1);
+        break;
+    case "ArrowUp":
+        // Up pressed
+        break;
+    case "ArrowDown":
+        // Down pressed
+        break;
+  }
+})
+
+// Returns the indices within clickableGrid of currently highlighted menu option
+// If nothing is selected, returns [0, 0]
+function getSelectedOption() {
+  let returnInd = [0, 0];
+  for (let ind in clickableGrid) {
+    for (let elemInd in clickableGrid[ind]) {
+      if (clickableGrid[ind][elemInd].className.includes('is-highlighted')) {
+        returnInd = [parseInt(ind), parseInt(elemInd)];
+        return returnInd
+      }
+    }
+  }
+  return returnInd
+}
+
+function moveCursorHorizontal(val) {
+  let selectedOption = getSelectedOption();
+  
+  // If nothing is selected, cursor moves to first game
+  if (selectedOption.every(v => v === 0)) {
+    highlightMenuOption(clickableGrid[1][0]);
+    return
+  }
+  
+  let newOption = selectedOption[1] += val;
+  // If bounds are exceeded, do nothing
+  if (newOption < 0) {
+    return
+  }
+  if (newOption >= clickableGrid[selectedOption[0]].length) {
+    return
+  }
+
+  // Otherwise, cursor moves
+  highlightMenuOption(clickableGrid[selectedOption[0]][newOption]);
+}

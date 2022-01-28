@@ -78,7 +78,7 @@ body {
   border: 3px solid $lighter-white;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.05);
 
-  &:hover {
+  &.is-highlighted {
     outline: 5px solid $teal-outline;
     
     .game-name {
@@ -134,7 +134,7 @@ body {
   width: 65px;
   background: $lighter-white;
 
-  &:hover {
+  &.is-highlighted {
     outline: 4px solid $teal-outline;
 
     .bubble-title {
@@ -181,7 +181,7 @@ body {
   width: 60px;
   overflow: hidden;
 
-  &:hover {
+  &.is-highlighted {
     border-color: $teal-outline;
   }
 
