@@ -136,6 +136,10 @@ body {
      object-fit: cover;
 }
 
+.grid:last-child {
+  margin-right: 2rem;
+}
+
 .bubble-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -353,7 +357,8 @@ body {
   width: 125px;
 }
 
-.analog-buttons .top-row, .analog-buttons .bottom-row {
+.analog-buttons .top-row,
+.analog-buttons .bottom-row {
   margin: 0 auto;
 }
 
@@ -447,8 +452,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   pointer-events: none;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .control-stick-inner {
@@ -486,7 +491,7 @@ body {
 }
 
 .right-controller .start-select-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -12px;
   left: 11px;
@@ -538,7 +543,7 @@ body {
 }
 
 .left-controller .misc-controller-btns::before {
-  content: '';
+  content: "";
   position: absolute;
   top: calc(50% - 1px);
   left: calc(50% - 1px);
@@ -552,5 +557,32 @@ body {
 
 .left-controller .misc-controller-btns::before:active {
   top: calc(50% - 2px);
+}
+
+.is-clicked {
+  -webkit-animation: clickedOn 0.5s;
+          animation: clickedOn 0.5s;
+}
+
+@-webkit-keyframes clickedOn {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes clickedOn {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */

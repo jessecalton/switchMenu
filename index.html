@@ -29,14 +29,26 @@
         </div>
         <div class="analog-buttons">
           <div class="top-row">
-            <button class="analog-button directional-arrow" data-analog-button="&#9650;"></button>
+            <button
+              class="analog-button directional-arrow up-arrow"
+              data-analog-button="&#9650;"
+            ></button>
           </div>
           <div class="middle-row">
-            <button class="analog-button directional-arrow" data-analog-button="&#9664;"></button> 
-            <button class="analog-button directional-arrow" data-analog-button="&#9654;"></button>
+            <button
+              class="analog-button directional-arrow left-arrow"
+              data-analog-button="&#9664;"
+            ></button>
+            <button
+              class="analog-button directional-arrow right-arrow"
+              data-analog-button="&#9654;"
+            ></button>
           </div>
           <div class="bottom-row">
-            <button class="analog-button directional-arrow" data-analog-button="&#9660;"></button>
+            <button
+              class="analog-button directional-arrow bottom-arrow"
+              data-analog-button="&#9660;"
+            ></button>
           </div>
         </div>
         <button class="misc-controller-btns"></button>
@@ -56,21 +68,37 @@
             </div>
 
             <div class="grid-wrapper">
-              <div class="grid is-clickable">
+              <div tabindex="1" class="grid is-clickable">
                 <div class="game-name"><span>Chrono Trigger</span></div>
-                <img class="game" src="./chronotrigger.jpeg" alt="Chrono Trigger"/>
+                <img
+                  class="game"
+                  src="./chronotrigger.jpeg"
+                  alt="Chrono Trigger"
+                />
               </div>
-              <div class="grid is-clickable">
-                <div class="game-name"><span>The Legend of Zelda: Breath Of The Wild</span></div>
-                <img class="game" src="./bow.jpeg" alt="Breath of the Wild"/>
+              <div tabindex="2" class="grid is-clickable">
+                <div class="game-name">
+                  <span>The Legend of Zelda: Breath Of The Wild</span>
+                </div>
+                <img class="game" src="./bow.jpeg" alt="Breath of the Wild" />
               </div>
-              <div class="grid is-clickable">
+              <div tabindex="3" class="grid is-clickable">
                 <div class="game-name"><span>Street Fighter II</span></div>
-                <img class="game" src="./streetfighter.jpeg" alt="Street Figher II"/>
+                <img
+                  class="game"
+                  src="./streetfighter.jpeg"
+                  alt="Street Figher II"
+                />
               </div>
-              <div class="grid is-clickable"><div class="game-placeholder"></div></div>
-              <div class="grid is-clickable"><div class="game-placeholder"></div></div>
-              <div class="grid is-clickable"><div class="game-placeholder"></div></div>
+              <div tabindex="4" class="grid is-clickable">
+                <div class="game-placeholder"></div>
+              </div>
+              <div tabindex="5" class="grid is-clickable">
+                <div class="game-placeholder"></div>
+              </div>
+              <div tabindex="6" class="grid is-clickable">
+                <div class="game-placeholder"></div>
+              </div>
             </div>
 
             <div class="bubble-wrapper">
@@ -105,7 +133,11 @@
                 <i class="fas fa-gamepad"></i>
               </div>
               <div class="button-prompts">
-                <div class="options" data-button="+" data-action="Options"></div>
+                <div
+                  class="options"
+                  data-button="+"
+                  data-action="Options"
+                ></div>
                 <div
                   class="options start"
                   data-button="A"
@@ -120,14 +152,26 @@
         <button class="start-select-btn"></button>
         <div class="analog-buttons">
           <div class="top-row">
-            <button class="analog-button btn-alpha" data-analog-button="X"></button>
+            <button
+              class="analog-button btn-alpha btn-x"
+              data-analog-button="X"
+            ></button>
           </div>
           <div class="middle-row">
-            <button class="analog-button btn-alpha" data-analog-button="Y"></button> 
-            <button class="analog-button btn-alpha" data-analog-button="A"></button>
+            <button
+              class="analog-button btn-alpha btn-y"
+              data-analog-button="Y"
+            ></button>
+            <button
+              class="analog-button btn-alpha btn-a"
+              data-analog-button="A"
+            ></button>
           </div>
           <div class="bottom-row">
-            <button class="analog-button btn-alpha" data-analog-button="B"></button>
+            <button
+              class="analog-button btn-alpha btn-b"
+              data-analog-button="B"
+            ></button>
           </div>
         </div>
         <div class="control-stick-wrapper">
@@ -137,9 +181,15 @@
             </div>
           </div>
         </div>
-        <button class="misc-controller-btns"><i class="fas fa-home"></i></button>
+        <button class="misc-controller-btns">
+          <i class="fas fa-home"></i>
+        </button>
       </div>
     </div>
+    <audio
+      id="audio"
+      src="https://www.myinstants.com/media/sounds/switch-sound.mp3"
+    ></audio>
     <script src="script.js"></script>
   </body>
 </html>

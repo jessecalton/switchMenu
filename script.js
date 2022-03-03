@@ -83,15 +83,17 @@ for (let csw of ctrlStickWrappers) {
 
     if (!nIntervId) {
       nIntervId = setInterval(() => {
-        if (x === 25) moveCursorHorizontal(1);
-        if (x === -25) moveCursorHorizontal(-1);
+        if (x === max) moveCursorHorizontal(1);
+        if (x === -max) moveCursorHorizontal(-1);
+        if (y === max) moveCursorVertical(1);
+        if (y === -max) moveCursorVertical(-1);
       }, 1000);
     }
 
-    if (Math.abs(x) !== 25) {
-      clearInterval(nIntervId);
-      nIntervId = null;
-    }
+    // if (Math.abs(x) !== max) {
+    //   clearInterval(nIntervId);
+    //   nIntervId = null;
+    // }
   });
 }
 
@@ -118,12 +120,16 @@ function highlightMenuOption(elem) {
 }
 
 for (let clickableElem of clickableElements) {
-  clickableElem.addEventListener("mouseover", (e) => {
+  clickableElem.addEventListener("mouseenter", (e) => {
     highlightMenuOption(clickableElem);
+  });
+
+  clickableElem.addEventListener("click", (e) => {
+    clickElementAnimation(clickableElem);
   });
 }
 
-// Build the 2D array of clickable elements
+// Build the 2D array of clickable menu items
 
 let innerGridInd = 0;
 let clickableGrid = [[]];
@@ -164,6 +170,24 @@ window.addEventListener("keydown", (e) => {
       break;
   }
 });
+
+// Event listeners for arrow key buttons
+
+document
+  .querySelector(".up-arrow")
+  .addEventListener("click", () => moveCursorVertical(-1));
+
+document
+  .querySelector(".bottom-arrow")
+  .addEventListener("click", () => moveCursorVertical(1));
+
+document
+  .querySelector(".left-arrow")
+  .addEventListener("click", () => moveCursorHorizontal(-1));
+
+document
+  .querySelector(".right-arrow")
+  .addEventListener("click", () => moveCursorHorizontal(1));
 
 // Returns the indices within clickableGrid of currently highlighted menu option
 // If nothing is selected, returns [0, 0]
@@ -232,3 +256,53 @@ function moveCursorVertical(val) {
   // Move cursor!
   highlightMenuOption(clickableGrid[newOption][nextRowValue]);
 }
+
+// Scale Animation for clicking a selected element
+
+// The click sound!
+let clickSound = document.getElementById("audio");
+
+function clickElementAnimation(selectedElement) {
+  selectedElement.classList.add("is-clicked");
+
+  clickSound.play();
+
+  setTimeout(() => {
+    selectedElement.classList.remove("is-clicked");
+  }, 500);
+}
+
+function clickSelectedElement() {
+  let selectedElement = document.querySelector(".is-highlighted");
+  if (!selectedElement) return;
+
+  clickElementAnimation(selectedElement);
+}
+
+// Event listeners for alpha buttons
+
+let selectButtons = document.querySelectorAll(".btn-alpha");
+
+selectButtons.forEach((btn) =>
+  btn.addEventListener("click", clickSelectedElement)
+);
+
+// Hover scroll animation
+// let gridWrapper = document.querySelector(".grid-wrapper");
+// let rightMostElements = document.querySelectorAll(
+//   ".grid-wrapper .is-clickable:nth-child(5), .grid-wrapper .is-clickable:nth-child(4)"
+// );
+
+// rightMostElements.forEach((elem) =>
+//   elem.addEventListener("focus", scrollGamesLeft)
+// );
+
+// function scrollGamesLeft() {
+//   gridWrapper.scroll({ left: 390, behavior: "smooth" });
+// }
+
+// function scrollRight() {
+//   if (gridWrapper.scrollLeft <= 351 && gridWrapper.scrollLeft >= 251) {
+//     gridWrapper.scroll({ right: 0, behavior: "smooth" });
+//   }
+// }
