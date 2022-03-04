@@ -3,7 +3,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  margin: auto 0;
+  margin: auto 2rem;
   font-family: "Roboto", sans-serif;
   color: #333;
 }

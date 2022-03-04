@@ -31,6 +31,7 @@ function updateScale() {
   } else {
     newScale = windowHeight / baseSize.h;
   }
+  newScale = Math.min(newScale, 1)
 
   main.style.transform = "scale(" + newScale + "," + newScale + ")";
 }
@@ -174,6 +175,9 @@ window.addEventListener("keydown", (e) => {
     case "ArrowDown":
       // Down pressed
       moveCursorVertical(1);
+      break;
+    case "Enter":
+      clickSelectedElement();
       break;
   }
 });
