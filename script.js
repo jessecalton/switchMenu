@@ -114,13 +114,20 @@ function highlightMenuOption(elem) {
   for (let clickableElem of clickableElements) {
     clickableElem.classList.remove("is-highlighted");
   }
-
   // Highlight selected element
   elem.classList.add("is-highlighted");
+
+  if (elem.id === 'scroll-left'){
+    scrollGamesLeft();
+  }
+
+  if (elem.id === 'scroll-right'){
+    scrollGamesRight();
+  }
 }
 
 for (let clickableElem of clickableElements) {
-  clickableElem.addEventListener("mouseenter", (e) => {
+  clickableElem.addEventListener("mousemove", (e) => {
     highlightMenuOption(clickableElem);
   });
 
@@ -206,7 +213,6 @@ function getSelectedOption() {
 
 function moveCursorHorizontal(val) {
   let selectedOption = getSelectedOption();
-
   // If nothing is selected, cursor moves to first game
   if (selectedOption.every((v) => v === 0)) {
     highlightMenuOption(clickableGrid[1][0]);
@@ -221,7 +227,6 @@ function moveCursorHorizontal(val) {
   if (newOption >= clickableGrid[selectedOption[0]].length) {
     return;
   }
-
   // Otherwise, cursor moves
   highlightMenuOption(clickableGrid[selectedOption[0]][newOption]);
 }
@@ -288,21 +293,24 @@ selectButtons.forEach((btn) =>
 );
 
 // Hover scroll animation
-// let gridWrapper = document.querySelector(".grid-wrapper");
-// let rightMostElements = document.querySelectorAll(
-//   ".grid-wrapper .is-clickable:nth-child(5), .grid-wrapper .is-clickable:nth-child(4)"
-// );
+let gridWrapper = document.querySelector(".grid-wrapper");
+let rightMostElements = document.querySelectorAll(
+  ".grid-wrapper .is-clickable:nth-child(5), .grid-wrapper .is-clickable:nth-child(4)"
+);
 
-// rightMostElements.forEach((elem) =>
-//   elem.addEventListener("focus", scrollGamesLeft)
-// );
+rightMostElements.forEach((elem) =>
+  elem.addEventListener("mouseover", scrollGamesLeft)
+);
 
-// function scrollGamesLeft() {
-//   gridWrapper.scroll({ left: 390, behavior: "smooth" });
-// }
+function scrollGamesLeft() {
+  if (gridWrapper.scrollLeft <= 100) {
+    gridWrapper.scroll({ left: 390, behavior: "smooth" });
+  }
+  
+}
 
-// function scrollRight() {
-//   if (gridWrapper.scrollLeft <= 351 && gridWrapper.scrollLeft >= 251) {
-//     gridWrapper.scroll({ right: 0, behavior: "smooth" });
-//   }
-// }
+function scrollGamesRight() {
+  if (gridWrapper.scrollLeft <= 400 && gridWrapper.scrollLeft >= 251) {
+    gridWrapper.scroll({ left: 0, behavior: "smooth" });
+  }
+}

@@ -5,6 +5,9 @@ $teal-outline: #3db4ad;
 $lightest-teal-outline: #6adcd0;
 
 body {
+  display: flex;
+  height: 100vh;
+  margin: auto 0;
   font-family: "Roboto", sans-serif;
   color: #333;
 }
