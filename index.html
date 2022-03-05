@@ -57,8 +57,8 @@
         <div class="screen-border">
           <div class="screen-wrapper">
             <div class="screen-header">
-              <div class="user-icon is-clickable">
-                <img src="./cuphead-logo.png" />
+              <div class="user-icon is-clickable" id="profile">
+                <img src="./img/cuphead-logo.png" />
               </div>
               <div class="toolbar">
                 <span id="clock"></span>
@@ -72,7 +72,7 @@
                 <div class="game-name"><span>Chrono Trigger</span></div>
                 <img
                   class="game"
-                  src="./chronotrigger.jpeg"
+                  src="./img/chronotrigger.jpeg"
                   alt="Chrono Trigger"
                 />
               </div>
@@ -80,24 +80,39 @@
                 <div class="game-name">
                   <span>The Legend of Zelda: Breath Of The Wild</span>
                 </div>
-                <img class="game" src="./bow.jpeg" alt="Breath of the Wild" />
+                <img
+                  class="game"
+                  src="./img/bow.jpeg"
+                  alt="Breath of the Wild"
+                />
               </div>
               <div class="grid is-clickable">
                 <div class="game-name"><span>Street Fighter II</span></div>
                 <img
                   class="game"
-                  src="./streetfighter.jpeg"
+                  src="./img/streetfighter.jpeg"
                   alt="Street Figher II"
                 />
               </div>
               <div class="grid is-clickable">
-                <div class="game-placeholder"></div>
+                <div class="game-name"><span>Hades</span></div>
+                <img class="game" src="./img/hades.jpeg" alt="Hades" />
               </div>
               <div class="grid is-clickable" id="scroll-left">
-                <div class="game-placeholder"></div>
+                <div class="game-name"><span>Super Mario World</span></div>
+                <img
+                  class="game"
+                  src="./img/marioworld.jpeg"
+                  alt="Super Mario World"
+                />
               </div>
               <div class="grid is-clickable">
-                <div class="game-placeholder"></div>
+                <div class="game-name"><span>Stardew Valley</span></div>
+                <img
+                  class="game"
+                  src="./img/stardew.jpeg"
+                  alt="Stardew Valley"
+                />
               </div>
             </div>
 
@@ -186,10 +201,9 @@
         </button>
       </div>
     </div>
-    <audio
-      id="audio"
-      src="https://www.myinstants.com/media/sounds/switch-sound.mp3"
-    ></audio>
+    <audio id="audio" src="./sounds/Enter.wav"></audio>
+    <audio id="profileSound" src="./sounds/User.wav"></audio>
+    <audio id="klick" src="./sounds/Klick.wav"></audio>
     <script src="script.js"></script>
   </body>
 </html>

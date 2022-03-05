@@ -1,3 +1,12 @@
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+html {
+  background: #a09cdd;
+  background: linear-gradient(183deg, #a09cdd 0%, #ccccde 35%, #b4dce4 100%);
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,6 +32,8 @@ body {
 .console-wrapper {
   padding: 15px 20px;
   background: #2f2f32;
+  -webkit-box-shadow: 0px 4px 1px #333;
+          box-shadow: 0px 4px 1px #333;
 }
 
 .screen-border {
@@ -333,6 +344,8 @@ body {
 .left-controller {
   background-color: #d5f35a;
   border-radius: 125px 0 0 125px;
+  -webkit-box-shadow: -6px 1px 2px #333;
+          box-shadow: -6px 1px 2px #333;
 }
 
 .left-controller .analog-buttons {
@@ -343,6 +356,8 @@ body {
 .right-controller {
   background-color: #aa2eb2;
   border-radius: 0 125px 125px 0;
+  -webkit-box-shadow: 6px 1px 2px #333;
+          box-shadow: 6px 1px 2px #333;
 }
 
 .right-controller .analog-buttons {
@@ -469,6 +484,8 @@ body {
   height: 75px;
   background-color: #000;
   border-radius: 50%;
+  -webkit-box-shadow: inset 0px 0px 5px 3px #333;
+          box-shadow: inset 0px 0px 5px 3px #333;
 }
 
 .start-select-btn {

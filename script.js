@@ -1,3 +1,5 @@
+let klickSound = document.getElementById("klick");
+
 var clock = document.getElementById("clock");
 
 function time() {
@@ -31,7 +33,7 @@ function updateScale() {
   } else {
     newScale = windowHeight / baseSize.h;
   }
-  newScale = Math.min(newScale, 1)
+  newScale = Math.min(newScale, 1);
 
   main.style.transform = "scale(" + newScale + "," + newScale + ")";
 }
@@ -88,7 +90,7 @@ for (let csw of ctrlStickWrappers) {
         if (x === -max) moveCursorHorizontal(-1);
         if (y === max) moveCursorVertical(1);
         if (y === -max) moveCursorVertical(-1);
-      }, 1000);
+      }, 900);
     }
 
     // if (Math.abs(x) !== max) {
@@ -118,11 +120,11 @@ function highlightMenuOption(elem) {
   // Highlight selected element
   elem.classList.add("is-highlighted");
 
-  if (elem.id === 'scroll-left'){
+  if (elem.id === "scroll-left") {
     scrollGamesLeft();
   }
 
-  if (elem.id === 'scroll-right'){
+  if (elem.id === "scroll-right") {
     scrollGamesRight();
   }
 }
@@ -220,6 +222,7 @@ function moveCursorHorizontal(val) {
   // If nothing is selected, cursor moves to first game
   if (selectedOption.every((v) => v === 0)) {
     highlightMenuOption(clickableGrid[1][0]);
+    klickSound.play();
     return;
   }
 
@@ -233,6 +236,7 @@ function moveCursorHorizontal(val) {
   }
   // Otherwise, cursor moves
   highlightMenuOption(clickableGrid[selectedOption[0]][newOption]);
+  klickSound.play();
 }
 
 function moveCursorVertical(val) {
@@ -264,17 +268,23 @@ function moveCursorVertical(val) {
 
   // Move cursor!
   highlightMenuOption(clickableGrid[newOption][nextRowValue]);
+  klickSound.play();
 }
 
 // Scale Animation for clicking a selected element
 
 // The click sound!
 let clickSound = document.getElementById("audio");
+let profileSound = document.getElementById("profileSound");
 
 function clickElementAnimation(selectedElement) {
   selectedElement.classList.add("is-clicked");
 
-  clickSound.play();
+  if (selectedElement.id === "profile") {
+    profileSound.play();
+  } else {
+    clickSound.play();
+  }
 
   setTimeout(() => {
     selectedElement.classList.remove("is-clicked");
@@ -310,7 +320,6 @@ function scrollGamesLeft() {
   if (gridWrapper.scrollLeft <= 100) {
     gridWrapper.scroll({ left: 390, behavior: "smooth" });
   }
-  
 }
 
 function scrollGamesRight() {
