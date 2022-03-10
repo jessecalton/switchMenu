@@ -273,15 +273,18 @@ function moveCursorVertical(val) {
 
 // Scale Animation for clicking a selected element
 
-// The click sound!
+// The click sounds!
 let clickSound = document.getElementById("audio");
 let profileSound = document.getElementById("profileSound");
+let newsSound = document.getElementById("news");
 
 function clickElementAnimation(selectedElement) {
   selectedElement.classList.add("is-clicked");
 
   if (selectedElement.id === "profile") {
     profileSound.play();
+  } else if (selectedElement.className.includes("bubble")) {
+    newsSound.play();
   } else {
     clickSound.play();
   }
@@ -327,3 +330,44 @@ function scrollGamesRight() {
     gridWrapper.scroll({ left: 0, behavior: "smooth" });
   }
 }
+
+// Misc button sounds and actions
+
+let miscControllerBtns = document.querySelectorAll(
+  ".start-select-btn, .misc-controller-btns"
+);
+let homeSound = document.getElementById("home-sound");
+
+function clickedMiscButton() {
+  homeSound.play();
+
+  // Deselect all elements
+  for (let clickableElem of clickableElements) {
+    clickableElem.classList.remove("is-highlighted");
+  }
+
+  scrollGamesRight();
+}
+
+for (let i = 0; i < miscControllerBtns.length; i++) {
+  console.log("check");
+  miscControllerBtns[i].addEventListener("click", clickedMiscButton);
+}
+
+// LR buttons
+
+let leftRightButtons = document.querySelectorAll(".lr-btn");
+
+leftRightButtons.forEach((btn) => {
+  btn.addEventListener("mousedown", () => {
+    btn.classList.add("clicked");
+  });
+
+  btn.addEventListener("mouseup", () => {
+    btn.classList.remove("clicked");
+  });
+
+  btn.addEventListener("mouseout", () => {
+    btn.classList.remove("clicked");
+  });
+});

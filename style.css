@@ -341,11 +341,41 @@ body {
   width: 150px;
 }
 
+.controller .lr-btn {
+  position: absolute;
+  top: -9px;
+  width: 150px;
+  height: 200px;
+  background-color: #333;
+  z-index: -1;
+}
+
+.controller .lr-btn.clicked {
+  top: -2px;
+}
+
+.controller .lr-btn::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  width: 150px;
+  height: 50px;
+}
+
 .left-controller {
   background-color: #d5f35a;
   border-radius: 125px 0 0 125px;
   -webkit-box-shadow: -6px 1px 2px #333;
           box-shadow: -6px 1px 2px #333;
+}
+
+.left-controller .lr-btn {
+  left: -6px;
+  border-top-left-radius: 125px;
+}
+
+.left-controller .lr-btn::before {
+  left: -6px;
 }
 
 .left-controller .analog-buttons {
@@ -358,6 +388,15 @@ body {
   border-radius: 0 125px 125px 0;
   -webkit-box-shadow: 6px 1px 2px #333;
           box-shadow: 6px 1px 2px #333;
+}
+
+.right-controller .lr-btn {
+  right: -6px;
+  border-top-right-radius: 125px;
+}
+
+.right-controller .lr-btn::before {
+  right: -6px;
 }
 
 .right-controller .analog-buttons {
