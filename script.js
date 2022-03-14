@@ -371,3 +371,13 @@ leftRightButtons.forEach((btn) => {
     btn.classList.remove("clicked");
   });
 });
+
+// Overlay / Instruction Manual
+
+let overlay = document.querySelector(".overlay");
+let openOverlayBtn = document.querySelector(".instruction-manual-button");
+
+openOverlayBtn.addEventListener("click", () =>
+  overlay.classList.remove("is-hidden")
+);
+overlay.addEventListener("click", () => overlay.classList.add("is-hidden"));

@@ -203,6 +203,102 @@
         </button>
       </div>
     </div>
+    <div class="instruction-manual-button">
+      <i class="fas fa-book"></i>
+      <span>How To Play</span>
+    </div>
+    <div class="overlay is-hidden">
+      <div class="overlay__content-wrapper">
+        <h2 class="overlay__heading">How To Play</h2>
+        <div class="overlay__instructions-wrapper">
+          <div class="instruction">
+            <div class="instruction-key">
+              <div class="control-stick-base">
+                <div id="right-control-stick" class="control-stick">
+                  <div class="control-stick-inner"></div>
+                </div>
+              </div>
+            </div>
+            <div class="instruction-key">
+              <div class="analog-buttons">
+                <div class="top-row">
+                  <button
+                    class="analog-button directional-arrow up-arrow"
+                    data-analog-button="&#9650;"
+                  ></button>
+                </div>
+                <div class="middle-row">
+                  <button
+                    class="analog-button directional-arrow left-arrow"
+                    data-analog-button="&#9664;"
+                  ></button>
+                  <button
+                    class="analog-button directional-arrow right-arrow"
+                    data-analog-button="&#9654;"
+                  ></button>
+                </div>
+                <div class="bottom-row">
+                  <button
+                    class="analog-button directional-arrow bottom-arrow"
+                    data-analog-button="&#9660;"
+                  ></button>
+                </div>
+              </div>
+            </div>
+            <div class="instruction-key">
+              <img class="arrow-keys" src="./img/arrowkeys.png" />
+            </div>
+            <div class="instruction-action">
+              <p>
+                Move cursor by hovering over a control stick, using the
+                directional pad, or with your computer's arrow keys
+              </p>
+            </div>
+          </div>
+          <div class="instruction">
+            <div class="instruction-key" id="overlay-analog-btns">
+              <div class="analog-buttons">
+                <div class="top-row">
+                  <button
+                    class="analog-button btn-alpha btn-x"
+                    data-analog-button="X"
+                  ></button>
+                </div>
+                <div class="middle-row">
+                  <button
+                    class="analog-button btn-alpha btn-y"
+                    data-analog-button="Y"
+                  ></button>
+                  <button
+                    class="analog-button btn-alpha btn-a"
+                    data-analog-button="A"
+                  ></button>
+                </div>
+                <div class="bottom-row">
+                  <button
+                    class="analog-button btn-alpha btn-b"
+                    data-analog-button="B"
+                  ></button>
+                </div>
+              </div>
+            </div>
+            <div class="instruction-key">
+              <img class="enter-key" src="./img/enterkey.png" />
+            </div>
+            <div class="instruction-key">
+              <img class="mouse-click" src="./img/mouseclick.png" />
+            </div>
+            <div class="instruction-action">
+              <p>
+                Make a selection using either the lettered analog buttons, a
+                mouse click, or your computer's ENTER key
+              </p>
+            </div>
+          </div>
+        </div>
+        <p>Click anywhere to close</p>
+      </div>
+    </div>
     <audio id="audio" src="./sounds/Popup.wav"></audio>
     <audio id="profileSound" src="./sounds/User.wav"></audio>
     <audio id="klick" src="./sounds/Klick.wav"></audio>
