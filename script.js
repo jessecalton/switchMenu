@@ -376,8 +376,10 @@ leftRightButtons.forEach((btn) => {
 
 let overlay = document.querySelector(".overlay");
 let openOverlayBtn = document.querySelector(".instruction-manual-button");
+let jigSound = document.getElementById("jig-sound");
 
-openOverlayBtn.addEventListener("click", () =>
-  overlay.classList.remove("is-hidden")
-);
+openOverlayBtn.addEventListener("click", () => {
+  overlay.classList.remove("is-hidden");
+  jigSound.play();
+});
 overlay.addEventListener("click", () => overlay.classList.add("is-hidden"));
