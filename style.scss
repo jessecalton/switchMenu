@@ -592,6 +592,10 @@ $btn-alpha-font-size: calc(#{$analog-button-pad-width} / 4.5);
   background-color: rgba(56, 56, 58, 0.85);
   z-index: 100;
   color: white;
+
+  &:not(.is-hidden) ~ .instruction-manual-button {
+    display: none;
+  }
 }
 
 .overlay__content-wrapper {

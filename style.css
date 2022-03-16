@@ -678,6 +678,10 @@ body {
   color: white;
 }
 
+.overlay:not(.is-hidden) ~ .instruction-manual-button {
+  display: none;
+}
+
 .overlay__content-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
