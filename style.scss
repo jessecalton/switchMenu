@@ -20,6 +20,8 @@ html {
 
 body {
   display: flex;
+  position: relative;
+  width: 100%;
   height: 100vh;
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -666,9 +668,32 @@ $btn-alpha-font-size: calc(#{$analog-button-pad-width} / 4.5);
 
 .instruction-manual-button {
   position: absolute;
-  bottom: 0;
-  left: 47%;
-  transform: translate(-50%, -50%);
+  bottom: 15%;
+  right: 50%;
+  opacity: 0;
+  transform: translate(50%, 50%);
   font-size: 25px;
   cursor: pointer;
+
+  @media all and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.is-pulsing {
+  animation: pulse 5s 4;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.02;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.02;
+  }
 }

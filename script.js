@@ -383,3 +383,15 @@ openOverlayBtn.addEventListener("click", () => {
   jigSound.play();
 });
 overlay.addEventListener("click", () => overlay.classList.add("is-hidden"));
+
+// Open overlay button animation
+// Pulse animation lasts 20 seconds, interval toggles class every 20s, begins 3s after page load
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    setInterval(() => {
+      openOverlayBtn.classList.toggle("is-pulsing");
+    }, 20000);
+    openOverlayBtn.classList.add("is-pulsing");
+  }, 3000);
+});
