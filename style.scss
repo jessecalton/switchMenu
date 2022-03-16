@@ -8,8 +8,17 @@ $lightest-teal-outline: #6adcd0;
   background: transparent;
 }
 
-html {
-  background: rgb(160, 156, 221);
+body {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #333;
   background: linear-gradient(
     183deg,
     rgba(160, 156, 221, 1) 0%,
@@ -18,22 +27,10 @@ html {
   );
 }
 
-body {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  color: #333;
-}
-
 .main {
   display: flex;
-  width: fit-content;
-  padding: 0 2rem;
-  margin: auto;
-  transform-origin: left;
+  padding: 2rem;
+  margin: 0 4rem 0 0;
 }
 
 .console-wrapper {
@@ -667,11 +664,7 @@ $btn-alpha-font-size: calc(#{$analog-button-pad-width} / 4.5);
 }
 
 .instruction-manual-button {
-  position: absolute;
-  bottom: 15%;
-  right: 50%;
   opacity: 0;
-  transform: translate(50%, 50%);
   font-size: 25px;
   cursor: pointer;
 
